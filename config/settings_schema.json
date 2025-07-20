@@ -1,0 +1,19 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Indali Premium Market",
+    "theme_version": "1.0.0",
+    "theme_author": "Indali"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "primary_color",
+        "default": "#f39c12",
+        "label": "Primary Color"
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+<div class="section">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+            <div>
+                {% if product.featured_image %}
+                    <img src="{{ product.featured_image | img_url: '600x600' }}" alt="{{ product.title }}" style="width: 100%; border-radius: 10px;">
+                {% endif %}
+            </div>
+            <div>
+                <h1 style="font-size: 2rem; margin-bottom: 1rem;">{{ product.title }}</h1>
+                <div style="font-size: 1.5rem; color: #f39c12; font-weight: 700; margin-bottom: 1rem;">{{ product.price | money }}</div>
+                <div style="margin-bottom: 2rem;">{{ product.description }}</div>
+                
+                <form action="/cart/add" method="post">
+                    <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                    <button type="submit" class="btn">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

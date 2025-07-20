@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page_title }}{% unless page_title contains shop.name %} - {{ shop.name }}{% endunless %}</title>
+    
+    {{ content_for_header }}
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; background: #fff; color: #333; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        
+        .header { 
+            position: fixed; top: 0; width: 100%; 
+            background: rgba(255,255,255,0.95); 
+            border-bottom: 1px solid #ddd; 
+            z-index: 1000; 
+        }
+        .header__inner { 
+            display: flex; justify-content: space-between; 
+            align-items: center; padding: 1rem 2rem; 
+        }
+        .logo { 
+            font-size: 2rem; font-weight: 700; 
+            background: linear-gradient(45deg, #f39c12, #e74c3c); 
+            background-clip: text; -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            text-decoration: none; 
+        }
+        .nav { display: flex; gap: 2rem; list-style: none; }
+        .nav a { color: #333; text-decoration: none; font-weight: 500; }
+        .nav a:hover { color: #f39c12; }
+        .cart-link { 
+            background: rgba(243,156,18,0.1); 
+            padding: 0.75rem; border-radius: 50%; 
+            text-decoration: none; color: #333; 
+        }
+        
+        main { margin-top: 80px; min-height: 60vh; }
+        
+        .hero { 
+            min-height: 60vh; display: flex; align-items: center; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); 
+            padding: 4rem 0; 
+        }
+        .hero h1 { 
+            font-size: 3rem; font-weight: 800; 
+            color: #2c3e50; margin-bottom: 1rem; 
+        }
+        .hero p { 
+            font-size: 1.1rem; color: #666; 
+            margin-bottom: 2rem; max-width: 500px; 
+        }
+        .btn { 
+            background: linear-gradient(45deg, #f39c12, #e74c3c); 
+            color: white; padding: 1rem 2rem; 
+            border-radius: 50px; text-decoration: none; 
+            font-weight: 600; display: inline-block; 
+        }
+        
+        .section { padding: 4rem 0; }
+        .section-title { 
+            text-align: center; font-size: 2.5rem; 
+            margin-bottom: 3rem; color: #2c3e50; 
+        }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 2rem; 
+        }
+        .card { 
+            background: #fff; border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            overflow: hidden; transition: transform 0.3s ease; 
+        }
+        .card:hover { transform: translateY(-5px); }
+        .card-image { 
+            height: 200px; background: #f8f9fa; 
+            display: flex; align-items: center; 
+            justify-content: center; font-size: 3rem; 
+        }
+        .card-content { padding: 1.5rem; }
+        .card-title { 
+            font-size: 1.2rem; font-weight: 600; 
+            margin-bottom: 0.5rem; color: #2c3e50; 
+        }
+        .card-price { 
+            font-size: 1.3rem; color: #f39c12; 
+            font-weight: 700; margin-bottom: 1rem; 
+        }
+        .card-btn { 
+            width: 100%; background: linear-gradient(45deg, #f39c12, #e74c3c); 
+            color: white; border: none; padding: 0.75rem; 
+            border-radius: 10px; font-weight: 600; cursor: pointer; 
+        }
+        
+        .footer { 
+            background: #2c3e50; color: #fff; 
+            padding: 3rem 0; text-align: center; 
+        }
+        
+        @media (max-width: 768px) {
+            .nav { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="{{ routes.root_url }}" class="logo">{{ shop.name }}</a>
+            <ul class="nav">
+                <li><a href="{{ routes.root_url }}">Home</a></li>
+                <li><a href="{{ routes.all_products_collection_url }}">Shop</a></li>
+                <li><a href="/pages/contact">Contact</a></li>
+            </ul>
+            <a href="{{ routes.cart_url }}" class="cart-link">🛒</a>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; {{ 'now' | date: "%Y" }} {{ shop.name }}. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<section style="min-height: 60vh; display: flex; align-items: center; background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); padding: 4rem 0;">
+    <div class="container">
+        <h1 style="font-size: 3rem; font-weight: 800; color: #2c3e50; margin-bottom: 1rem;">
+            Premium Gadgets<br>& Lifestyle Essentials
+        </h1>
+        <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem; max-width: 500px;">
+            Discover cutting-edge technology and premium lifestyle products designed to enhance your everyday life.
+        </p>
+        <a href="/collections" class="btn">Shop Now</a>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">Featured Products</h2>
+        <div class="grid">
+            {% for product in collections.all.products limit: 4 %}
+            <div class="card">
+                {% if product.featured_image %}
+                    <img src="{{ product.featured_image | img_url: '300x200' }}" style="width: 100%; height: 200px; object-fit: cover;">
+                {% else %}
+                    <div class="card-image">📦</div>
+                {% endif %}
+                <div class="card-content">
+                    <h3 class="card-title">{{ product.title }}</h3>
+                    <div class="card-price">{{ product.price | money }}</div>
+                    <form action="/cart/add" method="post">
+                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        <button type="submit" class="card-btn">Add to Cart</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
