@@ -507,19 +507,39 @@
       .product-image { height: 150px; }
     }
  
-  /* MINIMAL IMAGE FIX - Safe approach */
-img[src*="300x200"] {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4px;
-    transition: transform 0.3s ease;
+<style>
+/* COMPLETE PRODUCT IMAGE FIX - All pages */
+
+/* Target all product images - both 300x200 and other sizes */
+img[src*="indali.co.za/cdn/shop/files"] {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+    display: block !important;
+    max-width: 100% !important;
+    transition: transform 0.3s ease !important;
 }
 
-img[src*="300x200"]:hover {
-    transform: scale(1.02);
+img[src*="indali.co.za/cdn/shop/files"]:hover {
+    transform: scale(1.02) !important;
 }
+
+/* Safety net - target all images in product containers */
+[class*="product"] img,
+[class*="item"] img,
+[class*="card"] img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+    display: block !important;
+    max-width: 100% !important;
+    transition: transform 0.3s ease !important;
+}
+</style>
   
   </style>
 
