@@ -1,0 +1,296 @@
+/* ========================================
+   INDALI PRODUCT GRID STYLES
+   Complete styling for empty theme
+   ======================================== */
+
+/* Reset and Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Container Styles */
+.container,
+.page-width,
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Product Grid Container */
+.collection-grid,
+.product-grid,
+.products-grid,
+.grid,
+[class*="product"][class*="grid"],
+.main-content > div,
+.section > div {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+    gap: 25px !important;
+    padding: 30px 0 !important;
+    margin: 0 !important;
+}
+
+/* Individual Product Cards */
+.product-card,
+.product-item,
+.grid-product,
+.product,
+[class*="product"][class*="item"],
+[class*="product"][class*="card"],
+.main-content > div > div,
+.section > div > div {
+    background: white !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+    transition: all 0.3s ease !important;
+    border: 1px solid #e9ecef !important;
+    position: relative !important;
+}
+
+.product-card:hover,
+.product-item:hover,
+.grid-product:hover,
+.product:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Image Container */
+.product-image-container,
+.product-item__image,
+.card__media,
+.media,
+.image-container,
+[class*="product"][class*="image"],
+[class*="card"][class*="media"],
+div:first-child {
+    width: 100% !important;
+    height: 220px !important;
+    overflow: hidden !important;
+    background: #f8f9fa !important;
+    position: relative !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+/* Product Images */
+.product-image,
+.product-item__image img,
+.card__media img,
+.media img,
+img,
+[class*="product"] img,
+[class*="card"] img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    transition: transform 0.4s ease !important;
+}
+
+/* Image Hover Effect */
+.product-card:hover .product-image,
+.product-item:hover img,
+.card:hover img,
+.product:hover img {
+    transform: scale(1.08) !important;
+}
+
+/* Product Info Container */
+.product-info,
+.product-item__info,
+.card__content,
+.product-details,
+[class*="product"][class*="info"],
+[class*="card"][class*="content"] {
+    padding: 20px !important;
+    background: white !important;
+}
+
+/* Product Titles */
+.product-title,
+.product-item__title,
+.card__heading,
+.title,
+h1, h2, h3, h4,
+[class*="product"][class*="title"],
+[class*="card"][class*="heading"] {
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin: 0 0 10px 0 !important;
+    color: #2c3e50 !important;
+    line-height: 1.4 !important;
+    overflow: hidden !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    min-height: 42px !important;
+}
+
+/* Product Prices */
+.product-price,
+.price,
+.money,
+[class*="price"] {
+    font-size: 18px !important;
+    font-weight: bold !important;
+    color: #e74c3c !important;
+    margin: 0 !important;
+}
+
+/* Add to Cart Button */
+.btn,
+button,
+input[type="submit"],
+[class*="button"] {
+    background: #007bff !important;
+    color: white !important;
+    border: none !important;
+    padding: 12px 20px !important;
+    border-radius: 6px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease !important;
+    width: 100% !important;
+    margin-top: 15px !important;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: #0056b3 !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Header Styles */
+.header,
+.site-header,
+.main-header {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.site-title,
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+/* Section Titles */
+.section-title,
+.collection-title,
+.page-title {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .collection-grid,
+    .product-grid,
+    .products-grid,
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
+        gap: 20px !important;
+        padding: 20px 0 !important;
+    }
+    
+    .container,
+    .page-width,
+    .main-content {
+        padding: 0 15px;
+    }
+    
+    .product-image-container,
+    .product-item__image,
+    .card__media,
+    .media,
+    .image-container {
+        height: 180px !important;
+    }
+    
+    .section-title,
+    .collection-title,
+    .page-title {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .collection-grid,
+    .product-grid,
+    .products-grid,
+    .grid {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 15px !important;
+    }
+    
+    .product-image-container,
+    .product-item__image,
+    .card__media,
+    .media,
+    .image-container {
+        height: 150px !important;
+    }
+    
+    .product-info,
+    .product-item__info,
+    .card__content,
+    .product-details {
+        padding: 15px !important;
+    }
+    
+    .product-title,
+    .product-item__title,
+    .card__heading,
+    .title {
+        font-size: 14px !important;
+        min-height: 38px !important;
+    }
+    
+    .product-price,
+    .price,
+    .money {
+        font-size: 16px !important;
+    }
+}
+
+/* Loading Animation */
+@keyframes shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+
+.loading {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200px 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+/* Utility Classes */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+.mt-20 { margin-top: 20px !important; }
+.mb-20 { margin-bottom: 20px !important; }
+.p-20 { padding: 20px !important; }
+
+/* ======================================== */
