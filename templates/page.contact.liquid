@@ -1,0 +1,551 @@
+<style>
+:root {
+    --primary: #f1c40f;
+    --secondary: #f39c12;
+    --dark: #2c3e50;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --gradient: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--gradient);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.contact-info {
+    padding-right: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.contact-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-card {
+    background: var(--light-gray);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.contact-card-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.contact-card-content {
+    color: var(--medium-gray);
+    font-size: 1rem;
+}
+
+.contact-card-content a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-card-content a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Form */
+.contact-form {
+    background: var(--light-gray);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.form-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.form-subtitle {
+    color: var(--medium-gray);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    color: var(--dark);
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.form-input:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(241, 196, 15, 0.1);
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.form-button {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Business Hours Section */
+.hours-section {
+    padding: 80px 0;
+    background: var(--light-gray);
+}
+
+.hours-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.hours-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 40px;
+}
+
+.hours-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.hours-list {
+    display: grid;
+    gap: 10px;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f3f4;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.hours-day {
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.hours-time {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Stats Section */
+.stats-section {
+    padding: 60px 0;
+    background: var(--white);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .contact-info {
+        padding-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .contact-form {
+        padding: 30px 20px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+}
+</style>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>📞</span>
+        <span>Get In Touch</span>
+      </div>
+      
+      <h1 class="hero-title">Contact Us</h1>
+      <p class="hero-subtitle">We're here to help you with any questions about our premium products and exceptional service</p>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div class="contact-section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Ready to discover premium quality products? Get in touch with our friendly customer service team.</p>
+        
+        <div class="contact-cards">
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-icon">📧</div>
+              <h3 class="contact-card-title">Email Us</h3>
+            </div>
+            <div class="contact-card-content">
+              <a href="mailto:info@indali.co.za">info@indali.co.za</a><br>
+              <span>We'll respond within 24 hours</span>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-icon">📱</div>
+              <h3 class="contact-card-title">Call Us</h3>
+            </div>
+            <div class="contact-card-content">
+              <a href="tel:+27123456789">+27 12 345 6789</a><br>
+              <span>Monday - Friday: 8AM - 6PM</span>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-icon">💬</div>
+              <h3 class="contact-card-title">WhatsApp</h3>
+            </div>
+            <div class="contact-card-content">
+              <a href="https://wa.me/27123456789">+27 12 345 6789</a><br>
+              <span>Quick responses, anytime</span>
+            </div>
+          </div>
+          
+          <div class="contact-card">
+            <div class="contact-card-header">
+              <div class="contact-icon">📍</div>
+              <h3 class="contact-card-title">Visit Us</h3>
+            </div>
+            <div class="contact-card-content">
+              123 Premium Street<br>
+              Johannesburg, Gauteng 2000<br>
+              South Africa
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-form">
+        <h3 class="form-title">Send us a Message</h3>
+        <p class="form-subtitle">Fill out the form below and we'll get back to you shortly.</p>
+        
+        <form action="/contact" method="post" accept-charset="UTF-8">
+          <div class="form-group">
+            <label for="name" class="form-label">Full Name *</label>
+            <input type="text" id="name" name="contact[name]" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email Address *</label>
+            <input type="email" id="email" name="contact[email]" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="tel" id="phone" name="contact[phone]" class="form-input">
+          </div>
+          
+          <div class="form-group">
+            <label for="subject" class="form-label">Subject *</label>
+            <input type="text" id="subject" name="contact[subject]" class="form-input" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="message" class="form-label">Message *</label>
+            <textarea id="message" name="contact[body]" class="form-textarea" required placeholder="Tell us how we can help you..."></textarea>
+          </div>
+          
+          <button type="submit" class="form-button">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Business Hours -->
+<div class="hours-section">
+  <div class="container">
+    <div class="hours-content">
+      <h2 class="section-title">Business Hours</h2>
+      <p class="section-subtitle">Our customer service team is available during these hours to assist you</p>
+      
+      <div class="hours-card">
+        <h3 class="hours-title">🕒 When We're Available</h3>
+        <div class="hours-list">
+          <div class="hours-item">
+            <span class="hours-day">Monday - Friday</span>
+            <span class="hours-time">8:00 AM - 6:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">9:00 AM - 4:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time">10:00 AM - 2:00 PM</span>
+          </div>
+          <div class="hours-item">
+            <span class="hours-day">Public Holidays</span>
+            <span class="hours-time">Closed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">⚡</div>
+        <span class="stat-number">24hr</span>
+        <span class="stat-label">Response Time</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🌟</div>
+        <span class="stat-number">5 Star</span>
+        <span class="stat-label">Customer Service</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🛡️</div>
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Satisfaction Guarantee</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🚚</div>
+        <span class="stat-number">3 Days</span>
+        <span class="stat-label">Fast Delivery</span>
+      </div>
+    </div>
+  </div>
+</div>
