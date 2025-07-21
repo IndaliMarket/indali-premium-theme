@@ -506,6 +506,21 @@
       .category-card { padding: 1.5rem 1rem; }
       .product-image { height: 150px; }
     }
+ 
+  /* MINIMAL IMAGE FIX - Safe approach */
+img[src*="300x200"] {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+img[src*="300x200"]:hover {
+    transform: scale(1.02);
+}
+  
   </style>
 </head>
 
