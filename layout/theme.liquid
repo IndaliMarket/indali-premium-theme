@@ -522,6 +522,25 @@ img[src*="300x200"]:hover {
 }
   
   </style>
+
+<style>
+/* PRODUCT IMAGE FIX - All images sitewide */
+img[src*="indali.co.za/cdn/shop/files"][src*="300x200"] {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+    display: block !important;
+    max-width: 100% !important;
+    transition: transform 0.3s ease !important;
+}
+
+img[src*="indali.co.za/cdn/shop/files"][src*="300x200"]:hover {
+    transform: scale(1.02) !important;
+}
+</style>
+
 </head>
 
 <body>
