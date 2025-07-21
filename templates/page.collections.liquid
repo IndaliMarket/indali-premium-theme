@@ -1,0 +1,430 @@
+<style>
+:root {
+    --primary: #f1c40f;
+    --secondary: #f39c12;
+    --dark: #2c3e50;
+    --white: #ffffff;
+    --light-gray: #f8f9fa;
+    --medium-gray: #6c757d;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --gradient: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    background-color: var(--light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    background: var(--gradient);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 20px;
+    border-radius: 25px;
+    color: var(--white);
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--white);
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 40px;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Categories Section */
+.categories-section {
+    padding: 100px 0;
+    background: var(--white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: var(--medium-gray);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.category-image {
+    height: 200px;
+    background: var(--gradient);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.category-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10zm10 0c0-5.5-4.5-10-10-10s-10 4.5-10 10 4.5 10 10 10 10-4.5 10-10z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.category-icon {
+    font-size: 3rem;
+    color: var(--white);
+    z-index: 1;
+    position: relative;
+}
+
+.category-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.category-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.category-description {
+    color: var(--medium-gray);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.category-count {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.category-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.category-cta {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+.category-cta:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+/* Featured Stats */
+.stats-section {
+    padding: 60px 0;
+    background: var(--light-gray);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    
+    .stat-number {
+        font-size: 2.2rem;
+    }
+}
+</style>
+
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span>🏷️</span>
+        <span>Premium Categories</span>
+      </div>
+      
+      <h1 class="hero-title">Shop by Category</h1>
+      <p class="hero-subtitle">Discover our carefully curated product categories designed to make your shopping experience effortless and enjoyable</p>
+    </div>
+  </div>
+</div>
+
+<!-- Categories Section -->
+<div class="categories-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Explore Our Collections</h2>
+      <p class="section-subtitle">From everyday essentials to premium lifestyle products, find everything you need in our organized categories</p>
+    </div>
+    
+    <div class="categories-grid">
+      <!-- Grocery Range -->
+      <div class="category-card">
+        <a href="/collections/grocery" class="category-link">
+          <div class="category-image">
+            <div class="category-icon">🛒</div>
+          </div>
+          <div class="category-info">
+            <h3 class="category-title">Grocery Range</h3>
+            <p class="category-description">Fresh produce, pantry staples, and everyday grocery essentials</p>
+            <p class="category-count">250+ Products</p>
+            <span class="category-cta">Shop Now</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Home Range -->
+      <div class="category-card">
+        <a href="/collections/home" class="category-link">
+          <div class="category-image">
+            <div class="category-icon">🏠</div>
+          </div>
+          <div class="category-info">
+            <h3 class="category-title">Home Range</h3>
+            <p class="category-description">Furniture, decor, and everything to make your house a home</p>
+            <p class="category-count">180+ Products</p>
+            <span class="category-cta">Shop Now</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Electronics -->
+      <div class="category-card">
+        <a href="/collections/electronics" class="category-link">
+          <div class="category-image">
+            <div class="category-icon">⚡</div>
+          </div>
+          <div class="category-info">
+            <h3 class="category-title">Electronics</h3>
+            <p class="category-description">Latest gadgets, tech accessories, and electronic devices</p>
+            <p class="category-count">320+ Products</p>
+            <span class="category-cta">Shop Now</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Toys & Games -->
+      <div class="category-card">
+        <a href="/collections/toys" class="category-link">
+          <div class="category-image">
+            <div class="category-icon">🎮</div>
+          </div>
+          <div class="category-info">
+            <h3 class="category-title">Toys & Games</h3>
+            <p class="category-description">Fun and educational toys for kids of all ages</p>
+            <p class="category-count">150+ Products</p>
+            <span class="category-cta">Shop Now</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Tools & Hardware -->
+      <div class="category-card">
+        <a href="/collections/tools" class="category-link">
+          <div class="category-image">
+            <div class="category-icon">🔧</div>
+          </div>
+          <div class="category-info">
+            <h3 class="category-title">Tools & Hardware</h3>
+            <p class="category-description">Professional tools and hardware for every project</p>
+            <p class="category-count">200+ Products</p>
+            <span class="category-cta">Shop Now</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Sports & Outdoors -->
+      <div class="category-card">
+        <a href="/collections/sports" class="category-link">
+          <div class="category-image">
+            <div class="category-icon">⚽</div>
+          </div>
+          <div class="category-info">
+            <h3 class="category-title">Sports & Outdoors</h3>
+            <p class="category-description">Fitness equipment and outdoor adventure gear</p>
+            <p class="category-count">120+ Products</p>
+            <span class="category-cta">Shop Now</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon">📦</div>
+        <span class="stat-number">2000+</span>
+        <span class="stat-label">Products Available</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🚚</div>
+        <span class="stat-number">3 Days</span>
+        <span class="stat-label">Fast Delivery</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <span class="stat-number">5 Star</span>
+        <span class="stat-label">Customer Service</span>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🎯</div>
+        <span class="stat-number">6</span>
+        <span class="stat-label">Major Categories</span>
+      </div>
+    </div>
+  </div>
+</div>
